@@ -14,12 +14,10 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from flask_cors import CORS
 from flask import Flask, jsonify, request, send_file
 
 
 app = Flask(__name__)
-CORS(app)
 
 api_name = "mlb-metrics-api"
 api_version = "v1"
