@@ -1,8 +1,6 @@
 from flask import Flask, jsonify
 import os
 
-import numpy as np
-
 app = Flask(__name__)
 
 
