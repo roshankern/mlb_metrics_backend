@@ -56,6 +56,7 @@ def get_player_id():
 
     try:
         player_id = get_player_id_number(last_name, first_name, player_num)
+        print(f"Player ID: {player_id}")
         return jsonify({"player_id": int(player_id)}), 200
     except ValueError as e:
         return jsonify({"error": str(e)}), 404
