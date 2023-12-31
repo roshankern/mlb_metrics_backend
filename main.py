@@ -51,6 +51,8 @@ def get_player_id():
     first_name = request.args.get("first_name")
     player_num = request.args.get("player_num", default=0, type=int)  # Set default to 0
 
+    print(f"Getting player ID for {first_name} {last_name}")
+
     if not last_name or not first_name:
         return jsonify({"error": "Missing last name or first name"}), 400
 
