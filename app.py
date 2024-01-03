@@ -47,7 +47,7 @@ def random_int():
 
 
 @app.route("/test")
-def random_int():
+def test():
     print("test")
     data = pb.playerid_lookup("jones", "chipper")
     print(data)
