@@ -46,6 +46,14 @@ def random_int():
     return jsonify({"random_integer": random_number})
 
 
+@app.route("/test")
+def random_int():
+    print("test")
+    data = pb.playerid_lookup("jones", "chipper")
+    print(data)
+    return jsonify({"data": data})
+
+
 @app.route(f"/player-id", methods=["GET"])
 def get_player_id():
     last_name = request.args.get("last_name")
@@ -64,7 +72,3 @@ def get_player_id():
     except ValueError as e:
         print(str(e))
         return jsonify({"error": str(e)}), 404
-
-
-if __name__ == "__main__":
-    app.run(debug=True, port=os.getenv("PORT", default=5000))
