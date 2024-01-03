@@ -6,6 +6,7 @@ import numpy as np
 
 import pybaseball as pb
 
+
 def get_player_id_number(last_name: str, first_name: str, player_num: int = 0) -> int:
     """
     Finds the player ID based on the player's last name and first name.
@@ -31,19 +32,19 @@ def get_player_id_number(last_name: str, first_name: str, player_num: int = 0) -
         )
 
 
-
 app = Flask(__name__)
 
 
 @app.route("/")
 def index():
-    return jsonify({"Choo Choo": "Welcome to your Flask app 🚅"})
+    return jsonify({"Choo Choo": "Welcome to the Flask app!"})
 
 
 @app.route("/random-int")
 def random_int():
     random_number = np.random.randint(0, 100)  # Generates a random int between 0 and 99
     return jsonify({"random_integer": random_number})
+
 
 @app.route(f"/player-id", methods=["GET"])
 def get_player_id():
